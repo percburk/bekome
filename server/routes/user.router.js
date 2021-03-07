@@ -23,7 +23,7 @@ router.post('/register', (req, res, next) => {
 
   const queryText = `
     INSERT INTO "users" (email, password)
-    VALUES ($1, $2) RETURNING "id"
+    VALUES ($1, $2) RETURNING "id";
   `;
 
   pool

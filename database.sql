@@ -213,17 +213,6 @@ VALUES
 
 INSERT INTO "preferences" ("name", "category")
 VALUES
-('Empathy', 'qualities'),
-('Warmth', 'qualities'),
-('Critical thinking', 'qualities'),
-('Experience', 'qualities'),
-('Intuition', 'qualities'),
-('Elite/specialized training', 'qualities'),
-('Cultural competence', 'qualities'),
-('Challenges patients', 'qualities');
-
-INSERT INTO "preferences" ("name", "category")
-VALUES
 ('Individual', 'formats'),
 ('Couples', 'formats'),
 ('In-Person', 'formats'),
