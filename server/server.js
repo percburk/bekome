@@ -35,6 +35,7 @@ const server = app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
 
+// Making socket.io instance, adding CORS
 const io = socket(server, {
   cors: {
     origin: 'http://localhost:3000',
