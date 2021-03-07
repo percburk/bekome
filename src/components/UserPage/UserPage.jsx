@@ -1,27 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import io from 'socket.io-client';
 
-const socket = io.connect('http://localhost:5000');
+const socket = io.connect('http://localhost:5001');
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
+  const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
+  const messaging = useSelector((store) => store.messaging);
   const [message, setMessage] = useState('');
-  const [messageLog, setMessageLog] = useState([]);
+
+  useEffect(() => dispatch({ type: 'FETCH_MESSAGES' }), []);
 
   const handleSendMessage = () => {
     socket.emit('SEND_MESSAGE', {
+      id: user.id,
       author: user.email,
       message,
     });
     setMessage('');
   };
 
-  socket.on('RECEIVE_MESSAGE', (data) => {
-    console.log(data);
-    setMessageLog([...messageLog, data]);
+  socket.on('RECEIVE_MESSAGE', () => {
+    dispatch({ type: 'FETCH_MESSAGES' });
   });
 
   return (
@@ -30,13 +33,16 @@ function UserPage() {
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
       <div>
-        <input onChange={(event) => setMessage(event.target.value)} />
+        <input
+          onChange={(event) => setMessage(event.target.value)}
+          value={message}
+        />
         <button onClick={handleSendMessage}>SEND MESSAGE</button>
       </div>
       <div>
-        {messageLog.map((item, i) => {
+        {messaging?.map((item) => {
           return (
-            <p key={i}>
+            <p key={item.id}>
               {item.author}: {item.message}
             </p>
           );
