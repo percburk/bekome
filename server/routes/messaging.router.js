@@ -16,13 +16,13 @@ io.on('connection', (socket) => {
   const { id } = socket.client;
   console.log(`User connected: ${id}`);
   socket.on('SEND_MESSAGE', (data) => {
-    console.log(data);
+    const { sender_id, recipient_id, author, message } = data;
     const sqlText = `
-      INSERT INTO "messaging" ("users_id", "author", "message")
-      VALUES ($1, $2, $3);
+      INSERT INTO "messaging" ("sender_id", "recipient_id", "author", "message")
+      VALUES ($1, $2, $3, $4);
     `;
     pool
-      .query(sqlText, [data.id, data.author, data.message])
+      .query(sqlText, [sender_id, recipient_id, author, message])
       .then(io.emit('RECEIVE_MESSAGE'))
       .catch((err) => {
         console.log(`Error in messaging with query ${sqlText}`, err);
@@ -32,7 +32,10 @@ io.on('connection', (socket) => {
 
 // GET route to retrieve message history from the database
 router.get('/', (req, res) => {
-  const sqlText = `SELECT * FROM "messaging" WHERE "users_id" = $1;`;
+  const sqlText = `
+    SELECT * FROM "messaging" WHERE "recipient_id" = $1 OR "sender_id" = $1;
+  `;
+
   pool
     .query(sqlText, [req.user.id])
     .then((result) => res.send(result.rows))

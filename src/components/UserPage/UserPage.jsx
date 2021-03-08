@@ -10,17 +10,18 @@ function UserPage() {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const messaging = useSelector((store) => store.messaging);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState({ id: '', text: '' });
 
   useEffect(() => dispatch({ type: 'FETCH_MESSAGES' }), []);
 
   const handleSendMessage = () => {
     socket.emit('SEND_MESSAGE', {
-      id: user.id,
+      sender_id: user.id,
+      recipient_id: message.id,
       author: user.email,
-      message,
+      message: message.text,
     });
-    setMessage('');
+    setMessage({ id: '', text: '' });
   };
 
   socket.on('RECEIVE_MESSAGE', () => {
@@ -29,13 +30,21 @@ function UserPage() {
 
   return (
     <div className="container">
-      <h2>Welcome, {user.username}!</h2>
+      <h2>Welcome, {user.email}!</h2>
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
       <div>
         <input
-          onChange={(event) => setMessage(event.target.value)}
-          value={message}
+          onChange={(event) =>
+            setMessage({ ...message, id: event.target.value })
+          }
+          value={message.id}
+        />
+        <input
+          onChange={(event) =>
+            setMessage({ ...message, text: event.target.value })
+          }
+          value={message.text}
         />
         <button onClick={handleSendMessage}>SEND MESSAGE</button>
       </div>
