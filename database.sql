@@ -121,7 +121,6 @@ VALUES
 ('Two Spirit', 'genders'),
 ('Prefer not to respond', 'genders');
 
-
 INSERT INTO "preferences" ("name", "category")
 VALUES
 ('Baha''i', 'religions'),

@@ -21,7 +21,7 @@ app.use(sessionMiddleware);
 app.use(passport.initialize());
 app.use(passport.session());
 
-/* Routes */
+// --- Routes --- //
 app.use('/api/user', userRouter);
 app.use('/api/messaging', messagingRouter);
 
@@ -31,7 +31,7 @@ app.use(express.static('build'));
 // App Set //
 const PORT = process.env.PORT || 5000;
 
-/** Listen * */
+// --- Listen --- //
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });

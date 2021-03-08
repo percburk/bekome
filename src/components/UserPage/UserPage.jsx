@@ -49,17 +49,14 @@ function UserPage() {
         <button onClick={handleSendMessage}>SEND MESSAGE</button>
       </div>
       <div>
-        {messaging?.map((item) => {
-          return (
-            <p key={item.id}>
-              {item.author}: {item.message}
-            </p>
-          );
-        })}
+        {messaging?.map((item) => (
+          <p key={item.id}>
+            {item.author}: {item.message}
+          </p>
+        ))}
       </div>
     </div>
   );
 }
 
-// this allows us to use <App /> in index.js
 export default UserPage;
