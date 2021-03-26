@@ -1,3 +1,7 @@
+![repo size](https://img.shields.io/github/languages/code-size/percburk/bekome?style=flat-square)
+![language](https://img.shields.io/github/languages/top/percburk/bekome?style=flat-square)
+![forks](https://img.shields.io/github/forks/percburk/bekome?style=social)
+
 # bekome.
 
 ## Description
