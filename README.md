@@ -16,15 +16,13 @@ bekome aims to make the act of matching therapists to clients a painless process
 ### In-App Messaging:
 ![messaging](documentation/images/messaging.png)
 
-### Provider Introduction Video
+### Provider Introduction Video:
 ![video](documentation/images/video.png)
 
-### Provider Edit Profile
+### Provider Edit Profile:
 ![edit](documentation/images/edit-questions.png)
 
-
-
-### Prerequisites
+## Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
 - [PostgreSQL](https://www.postgresql.org/)
