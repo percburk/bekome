@@ -8,6 +8,7 @@ Finding a therapist that you gel with isn't easy. It's a long process that usual
 
 bekome aims to make the act of matching therapists to clients a painless process. The app is set up similarly to a dating app, such as Hinge. Clients and providers respectively set up their profiles with personal info, preferences, profile picture, and more. Then clients are able to browse and filter through providers and communicate with the ones who seem like a good fit.
 
+
 ## Screen Shots
 
 ### Explore View:
@@ -22,10 +23,12 @@ bekome aims to make the act of matching therapists to clients a painless process
 ### Provider Edit Profile:
 ![edit](documentation/images/edit-questions.png)
 
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
 - [PostgreSQL](https://www.postgresql.org/)
+
 
 ## Installation
 
@@ -43,6 +46,7 @@ bekome aims to make the act of matching therapists to clients a painless process
 6. Run `npm run server` in your terminal
 7. Run `npm run client` in your terminal
 8. The `npm run client` command will open up a new browser tab for you!
+
 
 ## Usage
 
@@ -72,6 +76,7 @@ bekome aims to make the act of matching therapists to clients a painless process
 - Material UI
 - AWS S3
 - Socket.io
+- Passport
 
 
 ## Acknowledgement
