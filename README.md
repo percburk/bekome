@@ -34,11 +34,11 @@ bekome aims to make the act of matching therapists to clients a painless process
 3. Create `.env` file. Add secret key as well as the following keys from your AWS bucket
   - `AWS_SECRET_ACCESS_KEY=`
   - `AWS_ACCESS_KEY_ID=`
-  - `AWS_S3_BUCKET=` /* name of bucket */
-  - `AWS_S3_REGION=` /* i.e. us-east-2 */
-  - `REACT_APP_AWS_S3_URL=` /* url of your bucket, i.e. `https://<bucketname>.s3.amazonaws.com` */
+  - `AWS_S3_BUCKET=` _name of bucket_
+  - `AWS_S3_REGION=` _i.e. us-east-2_
+  - `REACT_APP_AWS_S3_URL=` _url of your bucket, i.e._ `https://<bucketname>.s3.amazonaws.com`
 4. You'll also need a key for the socket.io client origin:
-  - `SOCKET_ORIGIN=http://localhost:3000` (if running locally)
+  - `SOCKET_ORIGIN=http://localhost:3000` _if running locally_
 5. Open up your editor of choice and run an `npm install`
 6. Run `npm run server` in your terminal
 7. Run `npm run client` in your terminal
