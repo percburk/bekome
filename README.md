@@ -69,7 +69,9 @@ bekome aims to make the act of matching therapists to clients a painless process
 - Node.js
 - PostgreSQL
 - Redux-Saga
-- 
+- Material UI
+- AWS S3
+- Socket.io
 
 
 ## Acknowledgement
