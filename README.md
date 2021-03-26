@@ -64,11 +64,12 @@ bekome aims to make the act of matching therapists to clients a painless process
 
 ## Built With
 
+- Javascript
 - React
 - Node.js
-- Redux
-- Sagas
 - PostgreSQL
+- Redux-Saga
+- 
 
 
 ## Acknowledgement
