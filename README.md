@@ -50,14 +50,14 @@ bekome aims to make the act of matching therapists to clients a painless process
 
 ## Usage
 
-### If you are a client
+### If you are a client:
 1. Create account
 2. Enter personal info and preferences
 3. Explore providers and filter by preference
 4. View providers, add them to 'saved providers'
 5. Message your saved providers in order to form a connection for further communication
 
-### If you are a provider
+### If you are a provider:
 1. Create account
 2. Enter personal info and credentials
 3. Answer questions to reveal detail about personality, approach, etc.
@@ -80,4 +80,5 @@ bekome aims to make the act of matching therapists to clients a painless process
 
 
 ## Acknowledgement
+
 Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.
