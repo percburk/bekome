@@ -39,12 +39,12 @@ bekome aims to make the act of matching therapists to clients a painless process
   - `AWS_S3_BUCKET=` /* name of bucket */
   - `AWS_S3_REGION=` /* i.e. us-east-2 */
   - `REACT_APP_AWS_S3_URL=` /* url of your bucket, i.e. `https://<bucketname>.s3.amazonaws.com` */
-  You'll also need a key for the socket.io client origin:
+4. You'll also need a key for the socket.io client origin:
   - `SOCKET_ORIGIN=http://localhost:3000` (if running locally)
-4. Open up your editor of choice and run an `npm install`
-5. Run `npm run server` in your terminal
-6. Run `npm run client` in your terminal
-7. The `npm run client` command will open up a new browser tab for you!
+5. Open up your editor of choice and run an `npm install`
+6. Run `npm run server` in your terminal
+7. Run `npm run client` in your terminal
+8. The `npm run client` command will open up a new browser tab for you!
 
 ## Usage
 
