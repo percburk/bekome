@@ -76,6 +76,21 @@ function EditProviderRoot() {
     setDialogOpen(false);
   };
 
+  const accordionProps = {
+    parsePreferences,
+    edit: true,
+    setDialogOpen,
+    openAccordion,
+    handleOpenAccordion,
+  };
+
+  const dialogProps = {
+    handleSubmit,
+    dialogOpen,
+    handleInputs,
+    handleCancel,
+  };
+
   return (
     <>
       <Box p={3}>
@@ -91,77 +106,20 @@ function EditProviderRoot() {
           </Grid>
           <Grid item xs={8}>
             <Typography variant="h5">Edit Profile</Typography>
-            <QuestionAccordion
-              edit={true}
-              setDialogOpen={setDialogOpen}
-              openAccordion={openAccordion}
-              handleOpenAccordion={handleOpenAccordion}
-            />
-            <StrengthsAccordion
-              parsePreferences={parsePreferences}
-              edit={true}
-              setDialogOpen={setDialogOpen}
-              openAccordion={openAccordion}
-              handleOpenAccordion={handleOpenAccordion}
-            />
-            <BackgroundAccordion
-              parsePreferences={parsePreferences}
-              edit={true}
-              setDialogOpen={setDialogOpen}
-              openAccordion={openAccordion}
-              handleOpenAccordion={handleOpenAccordion}
-            />
-            <SpecialtiesAccordion
-              parsePreferences={parsePreferences}
-              edit={true}
-              setDialogOpen={setDialogOpen}
-              openAccordion={openAccordion}
-              handleOpenAccordion={handleOpenAccordion}
-            />
-            <FormatsAccordion
-              parsePreferences={parsePreferences}
-              edit={true}
-              setDialogOpen={setDialogOpen}
-              openAccordion={openAccordion}
-              handleOpenAccordion={handleOpenAccordion}
-            />
+            <QuestionAccordion {...accordionProps} />
+            <StrengthsAccordion {...accordionProps} />
+            <BackgroundAccordion {...accordionProps} />
+            <SpecialtiesAccordion {...accordionProps} />
+            <FormatsAccordion {...accordionProps} />
           </Grid>
         </Grid>
       </Box>
-      <EditProviderQuestionsDialog
-        handleSubmit={handleSubmit}
-        dialogOpen={dialogOpen}
-        handleCancel={handleCancel}
-      />
-      <EditProviderStrengthsDialog
-        handleSubmit={handleSubmit}
-        dialogOpen={dialogOpen}
-        handleInputs={handleInputs}
-        handleCancel={handleCancel}
-      />
-      <EditProviderBackgroundDialog
-        handleSubmit={handleSubmit}
-        dialogOpen={dialogOpen}
-        handleInputs={handleInputs}
-        handleCancel={handleCancel}
-      />
-      <EditProviderSpecialtiesDialog
-        handleSubmit={handleSubmit}
-        dialogOpen={dialogOpen}
-        handleCancel={handleCancel}
-      />
-      <EditProviderFormatsDialog
-        handleSubmit={handleSubmit}
-        dialogOpen={dialogOpen}
-        handleInputs={handleInputs}
-        handleCancel={handleCancel}
-      />
-      <EditProviderCardDialog
-        handleSubmit={handleSubmit}
-        dialogOpen={dialogOpen}
-        handleInputs={handleInputs}
-        handleCancel={handleCancel}
-      />
+      <EditProviderQuestionsDialog {...dialogProps} />
+      <EditProviderStrengthsDialog {...dialogProps} />
+      <EditProviderBackgroundDialog {...dialogProps} />
+      <EditProviderSpecialtiesDialog {...dialogProps} />
+      <EditProviderFormatsDialog {...dialogProps} />
+      <EditProviderCardDialog {...dialogProps} />
     </>
   );
 }

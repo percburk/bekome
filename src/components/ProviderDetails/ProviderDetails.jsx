@@ -75,6 +75,12 @@ function ProviderDetails() {
     setVideoOpen(!videoOpen);
   };
 
+  const accordionProps = {
+    openAccordion,
+    handleOpenAccordion,
+    parsePreferences,
+  };
+
   return (
     <>
       <Box p={4}>
@@ -146,30 +152,11 @@ function ProviderDetails() {
           </Grid>
           <Grid item xs={6}>
             <Box boxShadow={2}>
-              <QuestionAccordion
-                openAccordion={openAccordion}
-                handleOpenAccordion={handleOpenAccordion}
-              />
-              <StrengthsAccordion
-                openAccordion={openAccordion}
-                handleOpenAccordion={handleOpenAccordion}
-                parsePreferences={parsePreferences}
-              />
-              <BackgroundAccordion
-                openAccordion={openAccordion}
-                handleOpenAccordion={handleOpenAccordion}
-                parsePreferences={parsePreferences}
-              />
-              <SpecialtiesAccordion
-                openAccordion={openAccordion}
-                handleOpenAccordion={handleOpenAccordion}
-                parsePreferences={parsePreferences}
-              />
-              <FormatsAccordion
-                openAccordion={openAccordion}
-                handleOpenAccordion={handleOpenAccordion}
-                parsePreferences={parsePreferences}
-              />
+              <QuestionAccordion {...accordionProps} />
+              <StrengthsAccordion {...accordionProps} />
+              <BackgroundAccordion {...accordionProps} />
+              <SpecialtiesAccordion {...accordionProps} />
+              <FormatsAccordion {...accordionProps} />
             </Box>
           </Grid>
         </Grid>

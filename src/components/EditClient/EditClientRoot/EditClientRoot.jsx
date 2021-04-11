@@ -55,6 +55,14 @@ function EditClientRoot() {
     setOpenAccordion(isExpanded ? panel : false);
   };
 
+  const accordionProps = {
+    handleInputs,
+    handleSubmit,
+    handleCancel,
+    handleOpenAccordion,
+    openAccordion,
+  };
+
   return (
     <>
       <Box p={3}>
@@ -72,32 +80,10 @@ function EditClientRoot() {
             <Box pb={2}>
               <Typography variant="h5">Edit Profile</Typography>
             </Box>
-            <EditClientProviderQualitiesAccordion
-              handleSubmit={handleSubmit}
-              handleCancel={handleCancel}
-              handleOpenAccordion={handleOpenAccordion}
-              openAccordion={openAccordion}
-            />
-            <EditClientReasonsAccordion
-              handleInputs={handleInputs}
-              handleSubmit={handleSubmit}
-              handleCancel={handleCancel}
-              handleOpenAccordion={handleOpenAccordion}
-              openAccordion={openAccordion}
-            />
-            <EditClientTherapyPreferencesAccordion
-              handleInputs={handleInputs}
-              handleSubmit={handleSubmit}
-              handleCancel={handleCancel}
-              handleOpenAccordion={handleOpenAccordion}
-              openAccordion={openAccordion}
-            />
-            <EditClientProviderPreferencesAccordion
-              handleSubmit={handleSubmit}
-              handleCancel={handleCancel}
-              handleOpenAccordion={handleOpenAccordion}
-              openAccordion={openAccordion}
-            />
+            <EditClientProviderQualitiesAccordion {...accordionProps} />
+            <EditClientReasonsAccordion {...accordionProps} />
+            <EditClientTherapyPreferencesAccordion {...accordionProps} />
+            <EditClientProviderPreferencesAccordion {...accordionProps} />
           </Grid>
         </Grid>
       </Box>
